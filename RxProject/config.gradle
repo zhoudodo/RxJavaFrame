@@ -1,0 +1,63 @@
+ext {
+    //android开发版本配置
+    android = [
+            applicationId       : 'com.zls.www.rxproject',
+//            compileSdkVersion: 26,
+//            buildToolsVersion: "26.0.2",
+//            applicationId    : "com.goldze.mvvmhabit",
+//            minSdkVersion    : 15,
+//            targetSdkVersion : 27,
+//            versionCode      : 1,
+//            versionName      : "1.0",
+    ]
+
+    //全局参数
+//    applicationId = "com.zls.www.rxproject"
+    compileSdkVersion = 26
+    buildToolsVersion = '26.0.2'
+    minSdkVersion = 16
+    targetSdkVersion = compileSdkVersion
+    versionCode = 1
+    versionName = '1.0.0'
+
+    supportLibVersion = '26.1.0'
+
+    //support配置
+    support = [
+//            "constraint-layout": "1.0.0-beta2",
+            'support-v4'       : 'com.android.support:support-v4:${version["support-version"]}',
+            'appcompat-v7'     : 'com.android.support:appcompat-v7:${version["support-version"]}',
+            'recyclerview-v7'  : 'com.android.support:recyclerview-v7:${version["support-version"]}',
+            'support-v13'      : 'com.android.support:support-v13:${version["support-version"]}',
+            'support-fragment' : 'com.android.support:support-fragment:${version["support-version"]}',
+            'animated-vector-drawable' : 'com.android.support:animated-vector-drawable:${version["support-version"]}',
+
+            //不知道为什么用不了这种指定版本号的方法
+            'junit'            : 'junit:junit:4.12',
+
+    ]
+    //version配置
+    version = [
+            "support-version": "27.1.1",
+            "junit-version"  : "4.12",
+    ]
+    //依赖第三方配置
+    dependencies = [
+            //rxjava
+            "rxjava"                               : "io.reactivex.rxjava2:rxjava:2.1.12",
+            "rxandroid"                            : "io.reactivex.rxjava2:rxandroid:2.0.2",
+//            //rx管理View的生命周期
+            "rxlifecycle"                          : "com.trello.rxlifecycle2:rxlifecycle:2.2.1",
+            "rxlifecycle-components"               : "com.trello.rxlifecycle2:rxlifecycle-components:2.2.1",
+            // rx 6.0权限请求
+            "rxpermissions"  : "com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar",
+//            //adapter-rxjava
+            "adapter-rxjava"                       : "com.squareup.retrofit2:adapter-rxjava2:2.4.0",
+            //material-dialogs
+            "material-dialogs-core"                                 : "com.afollestad.material-dialogs:core:0.9.4.5",
+            "material-dialogs-commons"                              : "com.afollestad.material-dialogs:commons:0.9.4.5",
+
+    ]
+}
+
+

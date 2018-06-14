@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true    //加上这行即可
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api rootProject.ext.support.'support-v4'
+    api rootProject.ext.support.'appcompat-v7'
+    api rootProject.ext.support.'recyclerview-v7'
+    api rootProject.ext.support.'support-v13'
+    api rootProject.ext.support.'support-fragment'
+    api rootProject.ext.support.'animated-vector-drawable'
+    testApi rootProject.ext.support.'junit'
+
+    // rxjava
+    api rootProject.ext.dependencies.rxjava
+    api rootProject.ext.dependencies.rxandroid
+    //network
+    api rootProject.ext.dependencies["adapter-rxjava"]
+    //material-dialogs  弹窗
+    api (rootProject.ext.dependencies["material-dialogs-core"])
+    api (rootProject.ext.dependencies["material-dialogs-commons"])
+    //rx管理View的生命周期
+    api (rootProject.ext.dependencies["rxlifecycle"])
+    api (rootProject.ext.dependencies["rxlifecycle-components"])
+    //rx权限请求
+    api rootProject.ext.dependencies.rxpermissions
+
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+}

@@ -1,0 +1,2 @@
+include ':app', ':RxLib', ':manager1'
+project(':manager1').projectDir = new File('manager')
