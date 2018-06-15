@@ -38,7 +38,6 @@ dependencies {
     api rootProject.ext.support.'support-fragment'
     api rootProject.ext.support.'animated-vector-drawable'
     testApi rootProject.ext.support.'junit'
-
     // rxjava
     api rootProject.ext.dependencies.rxjava
     api rootProject.ext.dependencies.rxandroid
@@ -56,4 +55,16 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    //okhttp
+    api 'com.squareup.okhttp3:okhttp:3.6.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    //logger
+    implementation 'com.orhanobut:logger:2.2.0'
+
+    // retrofit2 + okhttp3
+    api 'com.squareup.retrofit2:retrofit:2.2.0'
+    api 'org.ligboy.retrofit2:converter-fastjson-android:2.0.2'
+
+    //multidex
+    api 'com.android.support:multidex:1.0.2'
 }
