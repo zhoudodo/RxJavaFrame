@@ -67,4 +67,10 @@ dependencies {
 
     //multidex
     api 'com.android.support:multidex:1.0.2'
+
+    //百分比布局
+    api 'com.zhy:autolayout:1.4.5'
+
+    api 'com.jakewharton:butterknife:7.0.1'
+    annotationProcessor 'com.jakewharton:butterknife:7.0.1'
 }

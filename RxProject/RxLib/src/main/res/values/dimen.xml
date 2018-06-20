@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_margin_level">35dp</dimen>
+    <dimen name="default_margin_big">25dp</dimen>
+    <dimen name="default_margin_max">20dp</dimen>
+    <dimen name="default_margin">15dp</dimen>
+    <dimen name="default_margin_mid">10dp</dimen>
+    <dimen name="default_margin_top">5dp</dimen>
+
+</resources>

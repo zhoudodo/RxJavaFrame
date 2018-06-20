@@ -29,14 +29,14 @@ public class RetrofitHelper implements HttpLoggingInterceptor.Logger, Intercepto
     private static RetrofitHelper INSTANCE;
 
     //请求日志拦截器
-    public HttpLoggingInterceptor mHttpLogInterceptor;
-    public OkHttpClient mOkHttpClient;
-    public Retrofit mRetrofit;
+    protected HttpLoggingInterceptor mHttpLogInterceptor;
+    private OkHttpClient mOkHttpClient;
+    private static Retrofit mRetrofit;
     //缓存对象
     private final Cache cache;
 
     //获取单例
-    public RetrofitHelper getInstance(){
+    public static RetrofitHelper getInstance(){
         if(INSTANCE == null){
             synchronized (RetrofitHelper.class){
                 if(INSTANCE == null){
@@ -47,6 +47,9 @@ public class RetrofitHelper implements HttpLoggingInterceptor.Logger, Intercepto
         return INSTANCE;
     }
 
+    public static <T> T  create(final Class<T> service){
+       return mRetrofit.create(service);
+    }
 
     private RetrofitHelper(){
 
@@ -76,16 +79,18 @@ public class RetrofitHelper implements HttpLoggingInterceptor.Logger, Intercepto
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(mOkHttpClient)
                 .build();
+
     }
 
     @Override
     public Response intercept(Chain chain) throws IOException {
+        Logger.d("Response url = " + chain.request().url());
         return null;
     }
 
     @Override
     public void log(String message) {
-
+        Logger.d("HttpLoggingInterceptor log = " + message);
     }
     private Context getContext(){
         return FrameApplication.getFrameContext();
